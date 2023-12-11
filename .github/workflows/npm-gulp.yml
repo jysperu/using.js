@@ -1,0 +1,34 @@
+name: Build dist/using.min.js (v2)
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install Node.js v18
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build using.min.js
+      run: gulp
+
+    - name: Publish in GitHub
+      uses: peter-evans/create-pull-request@v5
+      with:
+          branch: building-dist/patch
+          delete-branch: true
+          commit-message: Building dist
+          title: Build dist
+          body: |
+            New dist/using.js
+            New dist/using.min.js

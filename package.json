@@ -1,0 +1,30 @@
+{
+  "name": "using.js",
+  "version": "1.0.0",
+  "description": "Una función que permite requerir de forma sencilla las librerías JS y/o CSS de un proyecto de forma fácil y asíncrona de manera que la plataforma carga mucho mas rápido al no leer todas los archivos innecesarios ya que estos serán leídos según son requeridos.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "gulp",
+    "build": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jysperu/using.js.git"
+  },
+  "keywords": [
+    "define",
+    "require",
+    "using",
+    "using.js"
+  ],
+  "author": "J&S Perú",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/jysperu/using.js/issues"
+  },
+  "homepage": "https://github.com/jysperu/using.js#readme",
+  "devDependencies": {
+    "dotenv": "^16.3.1",
+    "gulp": "^4.0.2"
+  }
+}
