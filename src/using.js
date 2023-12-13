@@ -220,7 +220,9 @@ var Promise, define;
         return new Promise(function (callback) {
             onDefinedPromiseCbk = function () {
                 clearInterval(tmo);
-                callback();
+                setTimeout(function(){
+                    callback();
+                }, 1);
                 onDefinedPromiseCbk = noop;
             };
 
