@@ -513,7 +513,14 @@ var Promise, define;
             await LoadNodos(files, define);
             debug('GetLib', 'Scripts y estilos del `' + lib + '` han sido leídos');
 
-            // callback(path.Script);
+            const totalJsFiles = files.filter(function(uri){ return /\.js(\?(.*))?$/i.test(uri); }).length;
+            if (totalJsFiles === 0) {
+                debug('GetLib', 'No se espera ningun define para el lib `' + lib + '`');
+                path.DefineCbk();
+                return;
+            }
+
+            setTimeout(path.DefineCbk, 3 *1000); // esperar 03 segundos en caso no se llame a la función define
         });
 
         path.GettingLib = promise;
