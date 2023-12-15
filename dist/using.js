@@ -346,7 +346,7 @@ var Promise, define;
         debug('define', name, 'deps', deps);
 
         let exports = {};
-        Using.libs.exports = exports;
+        Using.libs.exports.Script = exports;
 
         if (deps.length > 0)
             deps = await AsyncUsing(deps);
